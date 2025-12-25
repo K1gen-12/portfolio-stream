@@ -42,7 +42,7 @@ export default async function PageDetail({ params }: { params: { slug: string } 
         className="prose-blog"
         dangerouslySetInnerHTML={{ __html: html }}
       />
-      <LikeButton pageId={page.id} initialLikes={page.likes ?? 0} />
+      <LikeButton pageId={page.id} />
     </article>
   );
 }
