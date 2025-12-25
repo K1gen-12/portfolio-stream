@@ -17,10 +17,9 @@ export default function LikeButton({ pageId, initialLikes }: LikeButtonProps) {
     setLoading(true);
     const nextLikes = likes + 1;
     setLikes(nextLikes);
-    const { error } = await supabase
-      .from('pages')
-      .update({ likes: nextLikes })
-      .eq('id', pageId);
+    const { error } = await supabase.rpc('increment_like', {
+      p_page_id: pageId,
+    });
 
     if (error) {
       console.error(error);
