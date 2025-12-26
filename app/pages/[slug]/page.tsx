@@ -4,6 +4,8 @@ import { fetchPageBySlug } from '@/lib/data';
 import { renderMarkdown } from '@/lib/markdown';
 import LikeButton from '@/app/components/LikeButton';
 
+export const runtime = 'edge';
+
 const defaultThumbnail = '/images/thumbnail-placeholder.svg';
 
 export default async function PageDetail({ params }: { params: { slug: string } }) {
