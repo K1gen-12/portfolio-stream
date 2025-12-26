@@ -1,6 +1,12 @@
-# Node / Next build artifacts
+# Node / dependencies
 node_modules/**
+
+# Next.js build cache (絶対に配信不要)
 .next/cache/**
+.next/cache/webpack/**
+.next/cache/webpack/edge-server-production/**
+
+# Native binaries
 .next/**/*.node
 
 # OS junk
