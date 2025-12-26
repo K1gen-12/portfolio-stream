@@ -64,6 +64,9 @@ export default function AdminPage() {
                 </p>
               </div>
               <div className="flex items-center gap-3">
+                <span className="text-xs text-slate-400">
+                  ハイライト: {page.is_highlight ? 'はい' : 'いいえ'}
+                </span>
                 <Link
                   href={`/admin/${page.id}`}
                   className="rounded-md border border-slate-700 px-3 py-1 text-xs"

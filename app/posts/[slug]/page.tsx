@@ -1,10 +1,10 @@
+export const runtime = 'edge';
+
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { fetchPageBySlug } from '@/lib/data';
 import { renderMarkdown } from '@/lib/markdown';
 import LikeButton from '@/app/components/LikeButton';
-
-export const runtime = 'edge';
 
 const defaultThumbnail = '/images/thumbnail-placeholder.svg';
 
