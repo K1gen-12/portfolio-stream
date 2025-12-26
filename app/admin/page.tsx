@@ -14,7 +14,7 @@ export default function AdminPage() {
 
     const fetchPages = async () => {
       const { data, error } = await supabase
-        .from('posts')
+        .from('pages')
         .select('*')
         .order('created_at', { ascending: false });
 

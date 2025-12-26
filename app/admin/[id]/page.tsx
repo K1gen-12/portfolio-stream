@@ -38,7 +38,7 @@ async function deletePostAction(
     },
   });
 
-  const { error } = await supabase.from('posts').delete().eq('id', postId);
+  const { error } = await supabase.from('pages').delete().eq('id', postId);
 
   if (error) {
     return { success: false, message: error.message };

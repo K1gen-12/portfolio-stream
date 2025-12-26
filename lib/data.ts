@@ -3,7 +3,7 @@ import type { PostRecord } from './types';
 
 export async function fetchHighlightedPages() {
   const { data, error } = await supabase
-    .from('posts')
+    .from('pages')
     .select('*')
     .eq('is_highlight', true)
     .order('created_at', { ascending: false });
@@ -18,7 +18,7 @@ export async function fetchHighlightedPages() {
 
 export async function fetchRecentPages(limit = 10) {
   const { data, error } = await supabase
-    .from('posts')
+    .from('pages')
     .select('*')
     .order('created_at', { ascending: false })
     .limit(limit);
@@ -33,7 +33,7 @@ export async function fetchRecentPages(limit = 10) {
 
 export async function fetchPageList() {
   const { data, error } = await supabase
-    .from('posts')
+    .from('pages')
     .select('*')
     .order('created_at', { ascending: false });
 
@@ -47,7 +47,7 @@ export async function fetchPageList() {
 
 export async function fetchPageBySlug(slug: string) {
   const { data, error } = await supabase
-    .from('posts')
+    .from('pages')
     .select('*')
     .eq('slug', slug)
     .single();

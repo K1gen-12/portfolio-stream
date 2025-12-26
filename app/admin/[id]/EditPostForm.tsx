@@ -61,7 +61,7 @@ export default function EditPostForm({
 
     const fetchPost = async () => {
       const { data, error } = await supabase
-        .from('posts')
+        .from('pages')
         .select('*')
         .eq('id', postId)
         .single();
@@ -102,7 +102,7 @@ export default function EditPostForm({
 
     setSaving(true);
     const { error } = await supabase
-      .from('posts')
+      .from('pages')
       .update({
         title: form.title,
         slug: form.slug,

@@ -40,7 +40,7 @@ async function createPostAction(
     },
   });
 
-  const { error } = await supabase.from('posts').insert({
+  const { error } = await supabase.from('pages').insert({
     title: title.toString(),
     slug: slug.toString(),
     content: content.toString(),
