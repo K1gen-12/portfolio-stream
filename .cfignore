@@ -1,0 +1,8 @@
+# Node / Next build artifacts
+node_modules/**
+.next/cache/**
+.next/**/*.node
+
+# OS junk
+.DS_Store
+Thumbs.db
