@@ -14,7 +14,7 @@ export default async function PostsPage() {
         {pages.map((page) => (
           <Link
             key={page.id}
-            href={`/pages/${page.slug}`}
+            href={`/posts/${page.slug}`}
             className="block rounded-xl border border-slate-800 bg-slate-900/60 p-4 hover:border-slate-600"
           >
             <div className="flex items-center justify-between gap-4">

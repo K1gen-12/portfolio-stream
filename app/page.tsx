@@ -28,7 +28,7 @@ export default async function Home() {
           {highlights.map((page) => (
             <Link
               key={page.id}
-              href={`/pages/${page.slug}`}
+              href={`/posts/${page.slug}`}
               className="min-w-[280px] max-w-sm flex-1 rounded-2xl border border-slate-800 bg-slate-900/60 transition hover:border-slate-600"
             >
               <div className="aspect-video w-full overflow-hidden rounded-t-2xl border-b border-slate-800">
@@ -60,7 +60,7 @@ export default async function Home() {
           {recentPages.map((page) => (
             <Link
               key={page.id}
-              href={`/pages/${page.slug}`}
+              href={`/posts/${page.slug}`}
               className="block text-sm text-slate-300 hover:text-slate-100"
             >
               {page.title}
