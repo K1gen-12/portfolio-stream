@@ -3,10 +3,10 @@
 import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import { supabase } from '@/lib/supabase';
-import type { PageRecord } from '@/lib/types';
+import type { PostRecord } from '@/lib/types';
 
 export default function AdminPage() {
-  const [pages, setPages] = useState<PageRecord[]>([]);
+  const [pages, setPages] = useState<PostRecord[]>([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -14,14 +14,14 @@ export default function AdminPage() {
 
     const fetchPages = async () => {
       const { data, error } = await supabase
-        .from('pages')
+        .from('posts')
         .select('*')
         .order('created_at', { ascending: false });
 
       if (!active) return;
 
       if (!error && data) {
-        setPages(data as PageRecord[]);
+        setPages(data as PostRecord[]);
       }
       setLoading(false);
     };

@@ -1,53 +1,53 @@
 import { supabase } from './supabase';
-import type { PageRecord } from './types';
+import type { PostRecord } from './types';
 
 export async function fetchHighlightedPages() {
   const { data, error } = await supabase
-    .from('pages')
+    .from('posts')
     .select('*')
     .eq('is_highlight', true)
     .order('created_at', { ascending: false });
 
   if (error) {
     console.error('Failed to fetch highlighted pages', error);
-    return [] as PageRecord[];
+    return [] as PostRecord[];
   }
 
-  return data as PageRecord[];
+  return data as PostRecord[];
 }
 
 export async function fetchRecentPages(limit = 10) {
   const { data, error } = await supabase
-    .from('pages')
+    .from('posts')
     .select('*')
     .order('created_at', { ascending: false })
     .limit(limit);
 
   if (error) {
     console.error('Failed to fetch recent pages', error);
-    return [] as PageRecord[];
+    return [] as PostRecord[];
   }
 
-  return data as PageRecord[];
+  return data as PostRecord[];
 }
 
 export async function fetchPageList() {
   const { data, error } = await supabase
-    .from('pages')
+    .from('posts')
     .select('*')
     .order('created_at', { ascending: false });
 
   if (error) {
     console.error('Failed to fetch pages', error);
-    return [] as PageRecord[];
+    return [] as PostRecord[];
   }
 
-  return data as PageRecord[];
+  return data as PostRecord[];
 }
 
 export async function fetchPageBySlug(slug: string) {
   const { data, error } = await supabase
-    .from('pages')
+    .from('posts')
     .select('*')
     .eq('slug', slug)
     .single();
@@ -57,5 +57,5 @@ export async function fetchPageBySlug(slug: string) {
     return null;
   }
 
-  return data as PageRecord;
+  return data as PostRecord;
 }
