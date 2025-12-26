@@ -1,14 +1,20 @@
-# Node / dependencies
+# Ignore everything by default
+*
+
+# Allow only these directories/files
+!public/**
+!package.json
+!package-lock.json
+!next.config.js
+!tsconfig.json
+!postcss.config.js
+!tailwind.config.js
+!app/**
+!lib/**
+!components/**
+!styles/**
+!README.md
+
+# Explicitly block heavy stuff (念押し)
+.next/**
 node_modules/**
-
-# Next.js build cache (絶対に配信不要)
-.next/cache/**
-.next/cache/webpack/**
-.next/cache/webpack/edge-server-production/**
-
-# Native binaries
-.next/**/*.node
-
-# OS junk
-.DS_Store
-Thumbs.db
